@@ -31,7 +31,7 @@ public class WheelsIncreaseServiceImpl implements WheelsIncreaseService{
         try (Response response = client.newCall(request).execute()) {
             String vehicleXml = response.body().string().replaceAll("Vehicle", "vehicle");
             Vehicle vehicle = XMLConverter.convertToJava(vehicleXml);
-            vehicle.setNumberOfWheels(vehicle.getNumberOfWheels() + wheelsNumber);
+            vehicle.setNumberOfWheels(  vehicle.getNumberOfWheels() + wheelsNumber);
             RequestBody body = RequestBody.create(XMLConverter.convert(vehicle), XML);
             Request updateRequest = new Request.Builder()
                     .url(getVehiclesUrl + "/" + vehicleId)

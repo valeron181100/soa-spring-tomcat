@@ -10,7 +10,7 @@ import valeron.bondar.model.Increase;
 import valeron.bondar.services.WheelsIncreaseService;
 
 @RestController
-@RequestMapping(value = "/api/add-wheels")
+@RequestMapping(value = "/second-service/api/add-wheels")
 @AllArgsConstructor
 public class WheelsIncreaseController {
 

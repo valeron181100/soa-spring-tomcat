@@ -1,6 +1,5 @@
 package valeron.bondar.utils;
 
-import org.hibernate.Session;
 import valeron.bondar.model.VehicleFields;
 
 public class VehicleUtils {

@@ -1,0 +1,22 @@
+val:
+  bondar:
+    server:
+      get-vehicles-url: http://localhost:32003/api/vehicles
+server:
+  port: 32182
+test:
+  prop: hello_from_first
+spring:
+  application:
+    name: second-service
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: valera-config-server
+  config:
+    import: configserver:valera-config-server
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:32001/eureka}

@@ -10,7 +10,7 @@ import valeron.bondar.model.Vehicles;
 import valeron.bondar.services.WheelsRangeService;
 
 @RestController
-@RequestMapping(value = "/api/search/by-number-of-wheels")
+@RequestMapping(value = "/second-service/api/search/by-number-of-wheels")
 @AllArgsConstructor
 public class WheelsRangeController {
 

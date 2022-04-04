@@ -2,7 +2,6 @@ package valeron.bondar.model;
 
 import valeron.bondar.xml.LocalDateTimeAdapter;
 
-import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -10,19 +9,13 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @XmlRootElement
-@Table(name = "vehicles")
-@Entity
 public class Vehicle implements Serializable {
 
-    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Min(0)
     private int id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
 
-    @Column(name = "name", nullable = false)
     private String name; //Поле не может быть null, Строка не может быть пустой
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "coord_id", nullable = false)
     private Coordinates coordinates; //Поле не может быть null
 
     private LocalDateTime creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
@@ -41,18 +34,14 @@ public class Vehicle implements Serializable {
         this.fuelType = fuelType;
     }
 
-    @Column(name = "engine_power", nullable = false)
     @Min(0)
     private long enginePower; //Значение поля должно быть больше 0
 
-    @Column(name = "number_of_wheels", nullable = false)
     @Min(0)
     private long numberOfWheels; //Значение поля должно быть больше 0
 
-    @Column(name = "type")
     private VehicleType type; //Поле может быть null
 
-    @Column(name = "fuel_type")
     private FuelType fuelType; //Поле может быть null
 
     public int getId() {
